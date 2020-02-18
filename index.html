@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='UDsystem.css'></link>
+    <title>UDSystem™</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    
+    <nav>
+      <a href="#1">Expenses</a>
+      <a href="#2">Add Expense</a>
+      <a href="#3">Balance Overview</a>
+      <a href="#4">Settle Balance</a>
+    </nav>
 
+    <div id="1"> 
+      <h2>Expenses</h2>
+      <table id="expenses">
+          <tr>
+             <th>Name</th>
+             <th>Topic</th>
+             <th>Date</th>
+             <th>Amount</th>
+             <th>Currency</th>
+          </tr>
+      </table>
+    </div>
+    
+    <div id="2">
+      <h2>Add Expense</h2>
+      <form action="">
+
+
+      </form>
+    </div>
+
+    <div id="3">
+      <h2>Balance Overview</h2>
+    </div>
+
+    <div id="4">
+      <h2>Settle Balance</h2>
+    </div>
+
+    <script src='UDsystem.js'></script>
+</body>
+</html>
+
+<!--
+UD System v0.2  Construct a JS array of expenses, each consisting of name (of the persons having the expense), topic, date, amount, and currency. 
+Write a JS function that adds a table to the DOM of your static page from last based on the contents of the expense array.  
+See also [MH chapter 14] Exercise "Build a table". Remark as an additional hint that it is possible set the "innterHTML" attribute of an element to text 
+representing html code that is displayed inside the element. 
+ 
+--->
