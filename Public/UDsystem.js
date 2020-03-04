@@ -25,6 +25,7 @@ using its debugger, or on the command line in the directory of the unzipped file
 not be concerned with what the server side app.js does! (Next Lectures!!). 
 
 */
+'use strict';
 
 class Expense {
     constructor(name='', topic='', date='', amount=0, currency='') {
@@ -50,25 +51,17 @@ class overviewExpenses {
 function addRowToTable(expense) {
     let table = document.querySelector("#expenses");
     let tr = document.createElement("tr");
-    let tdName = document.createElement("td");
-    tdName.innerHTML = expense.name;
-    let tdTopic = document.createElement("td");
-    tdTopic.innerHTML = expense.topic;
-    let tdDate = document.createElement("td");
-    tdDate.innerHTML = expense.date;
-    let tdAmount = document.createElement("td");
-    tdAmount.innerHTML = expense.amount;
-    let tdCurrency = document.createElement("td");
-    tdCurrency.innerHTML = expense.currency;
-    tr.appendChild(tdName);
-    tr.appendChild(tdTopic);
-    tr.appendChild(tdDate);
-    tr.appendChild(tdAmount);
-    tr.appendChild(tdCurrency);
+    Object.keys(expense).forEach(key => {
+        let td = document.createElement("td");
+        td.innerHTML = expense[key];
+        tr.appendChild(td);
+    });
     table.appendChild(tr);
 }
 
 let expenses = new overviewExpenses();
-expenses.addExpense("Mads", "Kaffe", "09-02/2020", 0, "DKK");
+expenses.addExpense("Mads Henneberg", "Kaffe", "09-02/2020", 0, "DKK");
 expenses.addExpense("Alexander", "Kaffe", "18-02/2020", 55, "DKK");
+expenses.addExpense("Mads Bang", "Kaffe", "28-02/2020", 55, "DKK");
+
 const expenseTable = document.querySelector("#expenses");
